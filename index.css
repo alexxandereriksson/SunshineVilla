@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/*
+1.Root Settings
+2.Body Html settings
+3.Navbar
+4.Hero-Section
+5.Grid-Area
+6.Footer
+*/
+
+/*1.Root settings*/
+* {
+    --one: #f9fafa;
+    --two: #20303c;
+    --three: #2d4e67;
+    font-family: 'Shadows Into Light', cursive;
+    box-sizing: border-box;
+}
+/*2.Body html settings*/
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--two);
+    scroll-behavior: smooth;
+}
+
+/*3.navbar and navbar mobile version.*/
+
+.navbar {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(32,48,60,0.5);
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.navbar-links {
+    height: 100%;
+}
+.navbar-links,
+ul {
+    display: flex;
+    padding: 0;
+    gap: 1.3rem;
+}
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links,
+li,
+a {
+    text-decoration: none;
+    color: var(--one);
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--one);
+    border-radius: 10%;
+}
+
+/*Making the text bigger on bigger screens*/
+@media screen and (min-width: 800px) {
+    .navbar-links,
+    ul {
+        font-size: 2rem;
+        display: flex;
+        gap: 2rem;
+        margin: auto;
+    }
+    .navbar {
+        height: 9vh;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+}
+
+/*Making navbar responsive to smiller size*/
+@media screen and (max-width: 425px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+        color: #f9fafa;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        height: 20vh;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: 0.1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+        margin-top: 100px;
+        background-color: var(--two);
+    }
+}
+
+/*4.Hero-Section*/
+
+.hero-img {
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(img/kilarov-zaneit-aXq37rUfotU-unsplash.jpg);
+}
+
+.hero-text {
+    text-align: center;
+    color: var(--one);
+    font-size: 3rem;
+    margin-top: 10vh;
+}
+
+/*Hero-img Hero-text Responsive*/
+
+@media screen and (max-width: 425px) {
+    .hero-img {
+        height: 150vh;
+    }
+    .hero-text {
+        padding-top: 90px;
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+}
+/*Validerat OK!*/
+
+/*5.Grid-Area*/
+
+.testimonials-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 15vh;
+    gap: 80px;
+    margin-top: 15vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    height: auto;
+
+    background-color: var(--two);
+    color: var(--one);
+
+    grid-template-areas:
+        'comment1 comment2'
+        'comment3 comment4'
+        'comment5 comment6'
+        'comment7 comment7';
+}
+
+#comment1 {
+    grid-area: comment1;
+    background-image: url(img/family-591579_640.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    border: solid;
+}
+
+#comment2 {
+    grid-area: comment2;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: auto;
+    border: solid;
+    height:60vh;
+}
+
+#comment3 {
+    grid-area: comment3;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: auto;
+    border: solid;
+    height:60vh;
+}
+
+#comment4 {
+    grid-area: comment4;
+    background-image: url(img/jared-rice-PibraWHb4h8-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    border: solid var(--one);
+}
+#comment5 {
+    grid-area: comment5;
+    background-image: url(img/febiyan-hfrKpacEucE-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    border: solid var(--one);
+}
+
+#comment6 {
+    grid-area: comment6;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: auto;
+    border: solid;
+    height:60vh;
+}
+
+#comment7 {
+    grid-area: comment7;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: auto;
+    border: solid;
+}
+
+#contact {
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin-top: 3vh;
+    border: black 5px;
+
+}
+
+input[type='text'],
+input[type='button'],
+select,
+textarea {
+    font-size: large;
+    border: solid var(--three);
+    font-family:Arial, Helvetica, sans-serif
+}
+input[type='button']:hover {
+    color: green;
+    transform: scale(1.1);
+    border-radius: 8px;
+}
+/*Responsive Grid*/
+
+@media screen and (max-width: 500px) {
+    .testimonials-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 7fr;
+
+        grid-template-areas:
+            'comment2'
+            'comment1'
+            'comment3'
+            'comment4'
+            'comment5'
+            'comment6'
+            'comment7';
+        row-gap: 10vh;
+    }
+}
+/*6.Footer*/
+.footer-container {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    color: var(--one);
+    background-color: #0e1e2a;
+    border: solid var(--one);
+    margin: auto;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 4vh;
+}
+#item1 {
+    margin: auto;
+
+    font-size: 40px;
+}
+
+#item,
+p {
+    justify-content: center;
+
+    font-size: larger;
+}
+
+@media screen and (max-width: 425px) {
+    .footer-container {
+        height: 100%;
+    }
+}
+
+/*Above VALIDATED OK!*/
